@@ -7,19 +7,43 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-<div class="navbar">
+<div class="header">
     <h2>Products</h2>
-    <div class="cart">
-        <i class="bi bi-bag"></i>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag"
-             viewBox="0 0 16 16">
-            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-        </svg>
-        <div class="cartAmount">0</div>
+</div>
+
+<div class="search-box">
+    <input type="text" class="search-input" placeholder="Search products...">
+    <div class="button">
+        <button class="search-button">Search</button>
     </div>
 </div>
 
-<div class="shop" id="shop">
+<!-- <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+        <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+
+    </ul>
 </div>
+-->
+<div class="product-container" id="product-container"></div>
+<!--
+    <div class="product">
+        <div class="thumbnail-container">
+            <img src="${product.thumbnail}" alt="${product.title}" class="thumbnail">
+        </div>
+        <div class="product-details">
+            <h2>${product.title}</h2>
+            <h4>${product.category}</h4>
+            <div class="price-discount">
+                <p class="price">$${product.price.toFixed(2)}</p>
+                <p class="discount">${product.discountPercentage}% off</p>
+            </div>
+            <p class="stock">Stock: ${product.stock} available</p>
+        </div>
+    </div>
+</div>
+-->
+
 </body>
 </html>
