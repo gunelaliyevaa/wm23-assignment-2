@@ -118,7 +118,6 @@ function handleNextPage() {
     fetchData();
 }
 
-
 function handleReset() {
     currentPage = 1;
     searchInput.value = '';
@@ -134,7 +133,12 @@ function handleSearch() {
     fetchAndDisplayData(`${apiUrl}/search?q=${searchTerm}&category=${selectedCategory}&skip=${calculateSkip(currentPage)}&limit=${itemsPerPage}`);
 }
 
-
+function handleFilter() {
+    currentPage = 1;
+    selectedCategory = categoryDropdown.value;
+    currentFilteredPage = 1; // Reset current page when applying a filter
+    fetchAndDisplayData(`${apiUrl}/category/${selectedCategory}?skip=${calculateSkip(currentFilteredPage)}&limit=${itemsPerPage}`);
+}
 
 
 
