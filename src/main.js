@@ -103,6 +103,7 @@ function updatePaginationDisplay() {
 
 function handleError(error) {
     console.error('Fetch error:', error.message);
+    alert(`Error: ${error.message}`);
 }
 
 // Event Handlers
