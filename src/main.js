@@ -79,7 +79,7 @@ function createProductElement(product) {
     productDiv.classList.add('product');
 
     productDiv.innerHTML = `
-        <a href="product-info.html?id=${product.id}">
+        <a href="../product-info.html?id=${product.id}">
             <div class="thumbnail-container">
                 <img src="${product.thumbnail}" alt="${product.title}" class="thumbnail">
             </div>
