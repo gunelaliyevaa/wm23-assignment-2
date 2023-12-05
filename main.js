@@ -117,3 +117,24 @@ function handleNextPage() {
     if (currentPage < Math.floor(totalItemsFetched / itemsPerPage)) currentPage++;
     fetchData();
 }
+
+
+function handleReset() {
+    currentPage = 1;
+    searchInput.value = '';
+    categoryDropdown.value = '';
+    fetchData();
+}
+
+function handleSearch() {
+    currentPage = 1;
+    const searchTerm = searchInput.value.toLowerCase();
+    selectedCategory = categoryDropdown.value;
+
+    fetchAndDisplayData(`${apiUrl}/search?q=${searchTerm}&category=${selectedCategory}&skip=${calculateSkip(currentPage)}&limit=${itemsPerPage}`);
+}
+
+
+
+
+
