@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
@@ -12,38 +13,82 @@
 </div>
 
 <div class="search-box">
-    <input type="text" class="search-input" placeholder="Search products...">
+    <input type="text" id="search-input" class="search-input" placeholder="Search products...">
     <div class="button">
         <button class="search-button">Search</button>
     </div>
 </div>
 
-<!-- <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-        <span class="caret"></span></button>
-    <ul class="dropdown-menu">
+<div class="filter-container">
+    <label for="categories">Filter by Category:</label>
+    <select name="categories" id="categories">
+        <option value="" selected>All</option>
+        <optgroup label="Electronics">
+            <option value="smartphones">Smartphones</option>
+            <option value="laptops">Laptops</option>
+            <option value="mens-watches">Mens Watches</option>
+            <option value="womens-watches">Womens Watches</option>
+        </optgroup>
 
-    </ul>
+        <optgroup label="Fashion">
+            <option value="tops">Tops</option>
+            <option value="womens-dresses">Womens Dresses</option>
+            <option value="womens-shoes">Womens Shoes</option>
+            <option value="mens-shirts">Mens Shirts</option>
+            <option value="mens-shoes">Mens Shoes</option>
+            <option value="womens-bags">Womens Bags</option>
+            <option value="womens-jewellery">Womens Jewellery</option>
+            <option value="sunglasses">Sunglasses</option>
+        </optgroup>
+
+        <optgroup label="Beauty and Personal Care">
+            <option value="fragrances">Fragrances</option>
+            <option value="skincare">Skincare</option>
+        </optgroup>
+
+        <optgroup label="Home and Living">
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="furniture">Furniture</option>
+            <option value="lighting">Lighting</option>
+        </optgroup>
+
+        <optgroup label="Automotive">
+            <option value="automotive">Automotive</option>
+            <option value="motorcycle">Motorcycle</option>
+        </optgroup>
+    </select>
+    <br><br>
+    <input type="submit" value="Apply Filter">
+    <div class="reset-container">
+        <button class="reset-button">Reset</button>
+    </div>
 </div>
--->
+
+
 <div class="product-container" id="product-container"></div>
+
 <!--
-    <div class="product">
-        <div class="thumbnail-container">
-            <img src="${product.thumbnail}" alt="${product.title}" class="thumbnail">
+<div class="product">
+    <div class="thumbnail-container">
+        <img src="${product.thumbnail}" alt="${product.title}" class="thumbnail">
+    </div>
+    <div class="product-details">
+        <h2>${product.title}</h2>
+        <h4>${product.category}</h4>
+        <div class="price-discount">
+            <p class="price">$${product.price.toFixed(2)}</p>
+            <p class="discount">${product.discountPercentage}% off</p>
         </div>
-        <div class="product-details">
-            <h2>${product.title}</h2>
-            <h4>${product.category}</h4>
-            <div class="price-discount">
-                <p class="price">$${product.price.toFixed(2)}</p>
-                <p class="discount">${product.discountPercentage}% off</p>
-            </div>
-            <p class="stock">Stock: ${product.stock} available</p>
-        </div>
+        <p class="stock">Stock: ${product.stock} available</p>
     </div>
 </div>
 -->
 
+<div id="pagination">
+    <button id="prev-page">Previous</button>
+    <span id="current-page">Page 1</span>
+    <button id="next-page">Next</button>
+</div>
 </body>
 </html>
