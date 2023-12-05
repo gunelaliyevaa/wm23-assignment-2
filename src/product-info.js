@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detailedProductContainer.innerHTML = createProductHTML(product);
         })
         .catch(error => {
-            console.error('Error fetching detailed product data:', error);
+            alert(`Error fetching detailed product data: ${error.message}`);
         });
 });
 
@@ -31,6 +31,8 @@ function getProductIdFromUrl() {
 }
 
 function createProductHTML(product) {
+
+    //destructuring assignment to extract individual properties
     const {
         thumbnail,
         title,
@@ -43,6 +45,7 @@ function createProductHTML(product) {
         rating,
         images
     } = product;
+
 
     return `
         <img src="${thumbnail}" alt="${title}" class="thumbnail">
